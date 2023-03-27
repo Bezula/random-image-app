@@ -1,16 +1,15 @@
 <mat-card>
   <mat-card-header>
-    <!-- <mat-card-title>{{ photo.photographer }}</mat-card-title> -->
+    <mat-card-title>{{ photo.photographer }}</mat-card-title>
     <mat-card-title>{{ photo.alt || "Untitled" }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <img mat-card-image [ngSrc]="photo.src.large" fill [alt]="photo.alt" />
   </mat-card-content>
   <mat-card-actions>
-    <!-- <a mat-button color="accent" [href]="photo.photographer_url">
+    <a mat-button color="accent" [href]="photo.photographer_url">
       <mat-icon fontIcon="link"></mat-icon>
       {{ photo.photographer }}
-    </a> -->
-    <div>Essa</div>
+    </a>
   </mat-card-actions>
 </mat-card>
