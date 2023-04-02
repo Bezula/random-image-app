@@ -1,1 +1,27 @@
+@import "/src/theme/colors";
 
+.nav-list {
+  height: 100%;
+  box-shadow: 0 0 1.625rem 0 $color-primary;
+  .list-item {
+    height: 3rem;
+    padding: 0px 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease-in-out;
+
+    .active {
+      font-weight: 300;
+    }
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+
+  .list-item:has(.active) {
+    background-color: $color-primary;
+  }
+}

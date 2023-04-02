@@ -5,12 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 
 import { httpInterceptors } from './core/interceptors';
 import {
@@ -29,15 +23,9 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    MatSidenavModule,
     RouterLinkActive,
-    MatListModule,
     RouterLink,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
     NgOptimizedImage,
   ],
   declarations: [

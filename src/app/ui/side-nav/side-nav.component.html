@@ -1,23 +1,16 @@
-<mat-nav-list>
-  <mat-list-item><b>Image Gallery</b></mat-list-item>
-  <a
-    mat-list-item
-    routerLink="/"
-    #homeRla="routerLinkActive"
-    routerLinkActive
-    [routerLinkActiveOptions]="{ exact: true }"
-    [activated]="homeRla.isActive"
-  >
-    Home
-  </a>
-  <a
-    mat-list-item
-    routerLink="/random"
-    #randomRla="routerLinkActive"
-    routerLinkActive
-    [routerLinkActiveOptions]="{ exact: true }"
-    [activated]="randomRla.isActive"
-  >
-    Random Photos
-  </a>
-</mat-nav-list>
+<ul class="nav-list">
+  <li class="list-item arrow">
+    <b>Image Gallery</b>
+  </li>
+  <li *ngFor="let item of menu" class="list-item">
+    <a
+      [routerLink]="item.url"
+      #rla="routerLinkActive"
+      routerLinkActive
+      [routerLinkActiveOptions]="{ exact: true }"
+      [class.active]="rla.isActive"
+    >
+      {{ item.label }}
+    </a>
+  </li>
+</ul>
