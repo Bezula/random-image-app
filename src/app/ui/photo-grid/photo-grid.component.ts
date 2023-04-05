@@ -1,6 +1,5 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { tap } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription, tap } from 'rxjs';
 import { WindowService } from 'src/app/core/services';
 import { Photo, PhotosHttpService } from 'src/app/shared';
 
