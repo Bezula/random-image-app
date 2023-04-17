@@ -16,6 +16,7 @@ import {
   TopBarComponent,
 } from './ui';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { AppComponent } from './app.component';
     RouterLink,
     BrowserAnimationsModule,
     NgOptimizedImage,
+    ReactiveFormsModule,
   ],
   declarations: [
     AppComponent,

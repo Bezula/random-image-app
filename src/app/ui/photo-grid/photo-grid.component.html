@@ -1,3 +1,12 @@
-<div class="photos-grid">
+<div id="search" #search [ngClass]="fixed ? 'fixed' : ''">
+  <input id="query" type="text" [formControl]="searchControl" />
+  <label for="query">Search</label>
+</div>
+
+<div
+  #list
+  class="photos-grid"
+  [style.padding-top.px]="fixed ? searchHeight : 0"
+>
   <app-photo-card *ngFor="let photo of photos" [photo]="photo"></app-photo-card>
 </div>
