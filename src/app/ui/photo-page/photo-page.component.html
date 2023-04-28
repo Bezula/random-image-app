@@ -6,7 +6,8 @@
     <h3>{{ photo.alt || "Header example" }}</h3>
 
     <p class="opinion" [class.liked]="photo.liked">
-      {{ toUpperCase("liked") }}!
+      <!-- {{ toUpperCase("liked") }}! -->
+      {{ "liked" | uppercaseDev }}!
     </p>
   </div>
   <form class="form" (submit)="onSubmit($event)">
@@ -20,6 +21,7 @@
     <button>submit</button>
   </form>
   <div *ngFor="let comment of comments$ | async">
-    {{ toUpperCase(comment) }}
+    <!-- {{ toUpperCase(comment) }} -->
+    {{ comment | uppercaseDev }}
   </div>
 </div>

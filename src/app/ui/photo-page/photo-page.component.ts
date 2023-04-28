@@ -25,14 +25,21 @@ export class PhotoPageComponent {
   ) {}
 
   toUpperCase(label: string) {
+    console.count('e');
     return label.toUpperCase();
   }
 
   onSubmit(event: SubmitEvent) {
     event.preventDefault();
-    const comment = this.commentControl.getRawValue();
-    this.comments$.next(
-      this.comments$.value ? [...this.comments$.value, comment] : [comment]
-    );
+    let comments: string[] = [];
+    for (let index = 0; index < 100; index++) {
+      comments.push('test');
+    }
+
+    // this.comments$.next(comments);
+    // const comment = this.commentControl.getRawValue();
+    // this.comments$.next(
+    //   this.comments$.value ? [...this.comments$.value, comment] : [comment]
+    // );
   }
 }
