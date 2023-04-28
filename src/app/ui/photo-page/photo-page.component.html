@@ -1,0 +1,25 @@
+<div class="container" *ngIf="photo$ | async as photo">
+  <div class="photo-container">
+    <app-photo-card [photo]="photo"></app-photo-card>
+  </div>
+  <div class="details-container">
+    <h3>{{ photo.alt || "Header example" }}</h3>
+
+    <p class="opinion" [class.liked]="photo.liked">
+      {{ toUpperCase("liked") }}!
+    </p>
+  </div>
+  <form class="form" (submit)="onSubmit($event)">
+    <label for="comment">Create comment</label>
+    <input
+      type="text"
+      name="comment"
+      id="comment"
+      [formControl]="commentControl"
+    />
+    <button>submit</button>
+  </form>
+  <div *ngFor="let comment of comments$ | async">
+    {{ toUpperCase(comment) }}
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  .photo-container {
+    width: 600px;
+  }
+
+  .details-container {
+    padding: 0 1rem;
+    height: 400px;
+    width: 400px;
+    margin-top: 77px;
+  }
+
+  .opinion {
+    margin-top: auto;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: grey;
+    width: fit-content;
+    &.liked {
+      background-color: green;
+      color: white;
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}

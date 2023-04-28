@@ -19,6 +19,8 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './shared/test/test.component';
 import { CustomFormsModule } from './shared/forms';
+import { PhotoPageComponent } from './ui/photo-page/photo-page.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   imports: [
@@ -32,6 +34,7 @@ import { CustomFormsModule } from './shared/forms';
     NgOptimizedImage,
     ReactiveFormsModule,
     CustomFormsModule,
+    CoreModule,
   ],
   declarations: [
     AppComponent,
@@ -42,6 +45,7 @@ import { CustomFormsModule } from './shared/forms';
     PhotoCardComponent,
     PhotoGridComponent,
     TestComponent,
+    PhotoPageComponent,
   ],
   bootstrap: [AppComponent],
   providers: [httpInterceptors],
