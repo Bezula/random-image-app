@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  NgZone,
   OnDestroy,
   OnInit,
   ViewChild,
@@ -39,10 +40,16 @@ export class PhotoGridComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private readonly photosHttpService: PhotosHttpService,
     private readonly windowService: WindowService,
-    private readonly searchService: SearchService
+    private readonly searchService: SearchService,
+    private ngzone: NgZone
   ) {}
 
   ngOnInit(): void {
+    this.ngzone.runOutsideAngular(() => {
+      for (let i = 0; i < 1000; i++) {
+        console.log(i);
+      }
+    });
     this.searchControl.patchValue(this.query);
     this.subscriptions$.add(
       this.photosHttpService
@@ -62,7 +69,7 @@ export class PhotoGridComponent implements OnInit, OnDestroy, AfterViewInit {
           filter(() => {
             const searchElement = this.search?.nativeElement as HTMLElement;
 
-            return searchElement.getBoundingClientRect().top < 0 && !this.fixed;
+            return searchElement.getBoundingClientRect().top < 0;
           }),
           tap(() => (this.fixed = true))
         )
@@ -72,7 +79,7 @@ export class PhotoGridComponent implements OnInit, OnDestroy, AfterViewInit {
     this.subscriptions$.add(
       this.windowService.scroll$
         .pipe(
-          filter(() => window.scrollY < this.searchTopPosition && this.fixed),
+          filter(() => window.scrollY < this.searchTopPosition),
           tap(() => (this.fixed = false))
         )
         .subscribe()
