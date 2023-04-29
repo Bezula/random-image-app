@@ -1,0 +1,41 @@
+@import "/src//styles.scss";
+input[type="text"] {
+  border: 2px solid $color-secondary;
+  border-radius: 5px;
+  height: 47px;
+  width: 300px;
+  color: #000000;
+  font-size: 14px;
+  padding-left: 20px;
+  box-shadow: none;
+}
+
+input:focus ~ label {
+  font-size: 12px;
+  color: $color-secondary;
+  top: -5px;
+  left: 10px;
+  background: #ffffff;
+  padding: 0px 5px;
+}
+
+.input_wrap {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.input_wrap label {
+  font-family: arial;
+  font-size: 1rem;
+  color: $color-secondary;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s ease all;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
