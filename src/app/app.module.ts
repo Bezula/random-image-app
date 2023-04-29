@@ -18,6 +18,7 @@ import {
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './shared/test/test.component';
+import { CustomFormsModule } from './shared/forms';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { TestComponent } from './shared/test/test.component';
     BrowserAnimationsModule,
     NgOptimizedImage,
     ReactiveFormsModule,
+    CustomFormsModule,
   ],
   declarations: [
     AppComponent,
