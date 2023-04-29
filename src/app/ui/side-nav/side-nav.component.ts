@@ -15,5 +15,9 @@ export class SideNavComponent {
       label: 'Random',
       url: '/random',
     },
+    {
+      label: 'Test',
+      url: '/test',
+    },
   ];
 }

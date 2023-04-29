@@ -17,6 +17,7 @@ import {
 } from './ui';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TestComponent } from './shared/test/test.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TopBarComponent,
     PhotoCardComponent,
     PhotoGridComponent,
+    TestComponent,
   ],
   bootstrap: [AppComponent],
   providers: [httpInterceptors],
