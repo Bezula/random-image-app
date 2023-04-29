@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './ui';
 import { RandomComponent } from './ui/random/random.component';
+import { TestComponent } from './shared/test/test.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'random',
         component: RandomComponent,
+      },
+      {
+        path: 'test',
+        component: TestComponent,
       },
     ],
   },
