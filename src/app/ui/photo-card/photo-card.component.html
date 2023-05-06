@@ -1,4 +1,4 @@
-<div class="card">
+<a [routerLink]="['/photo', photo.id]" class="card">
   <header class="header">
     <h3>{{ photo.photographer }}</h3>
     <p>{{ photo.alt || "Untitled" }}</p>
@@ -11,4 +11,4 @@
       {{ photo.photographer }}
     </a>
   </div>
-</div>
+</a>

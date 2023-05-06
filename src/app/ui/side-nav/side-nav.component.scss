@@ -5,7 +5,8 @@
   width: 8.75rem;
   position: fixed;
   box-shadow: 0 0 1.625rem 0 $color-primary;
-  .list-item {
+  .list-item a,
+  .list-item.arrow {
     height: 3rem;
     padding: 0px 1.25rem;
     display: flex;
@@ -15,15 +16,20 @@
 
     transition: background-color 0.2s ease-in-out;
 
-    .active {
-      font-weight: 300;
+    &.active {
+      font-weight: 600;
     }
+
     &:hover {
       background-color: $color-secondary;
+      color: white;
     }
   }
 
-  .list-item:has(.active) {
-    background-color: $color-primary;
+  .list-item a {
+    &.active {
+      background-color: $color-primary;
+      color: white;
+    }
   }
 }

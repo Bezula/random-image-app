@@ -1,0 +1,23 @@
+<div class="container" *ngIf="photo$ | async as photo">
+  <div class="photo-container">
+    <app-photo-card [photo]="photo"></app-photo-card>
+  </div>
+  <div class="details-container">
+    <div class="comments-container">
+      <p class="comments-header">Comments:</p>
+      <app-photo-comment
+        *ngFor="let comment of comments$ | async"
+        [comment]="comment"
+      >
+      </app-photo-comment>
+    </div>
+
+    <form class="form" (submit)="onSubmit($event)">
+      <app-input-form
+        [formControl]="commentControl"
+        [label]="label"
+      ></app-input-form>
+      <button class="secondary">Submit Comment</button>
+    </form>
+  </div>
+</div>
