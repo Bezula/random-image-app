@@ -16,30 +16,25 @@ export class PhotoPageComponent {
   );
 
   commentControl = this.formBuilder.control('');
+  readonly label = 'Comment photo';
 
-  comments$ = new BehaviorSubject<string[] | null>(null);
+  comments$ = new BehaviorSubject<string[] | null>(['essa', 'seeeee']);
   constructor(
     private formBuilder: NonNullableFormBuilder,
     private activatedRoute: ActivatedRoute,
     private photosService: PhotosHttpService
   ) {}
 
-  toUpperCase(label: string) {
-    console.count('e');
-    return label.toUpperCase();
-  }
-
   onSubmit(event: SubmitEvent) {
     event.preventDefault();
     let comments: string[] = [];
     for (let index = 0; index < 100; index++) {
-      comments.push('test');
+      comments.push(this.commentControl.getRawValue());
     }
 
-    // this.comments$.next(comments);
-    // const comment = this.commentControl.getRawValue();
-    // this.comments$.next(
-    //   this.comments$.value ? [...this.comments$.value, comment] : [comment]
-    // );
+    this.comments$.next([
+      ...comments,
+      ...(this.comments$?.value ? this.comments$.value : []),
+    ]);
   }
 }

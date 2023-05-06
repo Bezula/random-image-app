@@ -21,6 +21,7 @@ import { TestComponent } from './shared/test/test.component';
 import { CustomFormsModule } from './shared/forms';
 import { PhotoPageComponent } from './ui/photo-page/photo-page.component';
 import { CoreModule } from './core/core.module';
+import { PhotoCommentComponent } from './ui/photo-comment/photo-comment.component';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { CoreModule } from './core/core.module';
     PhotoGridComponent,
     TestComponent,
     PhotoPageComponent,
+    PhotoCommentComponent,
   ],
   bootstrap: [AppComponent],
   providers: [httpInterceptors],
